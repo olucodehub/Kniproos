@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Koop een Mooie Roos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 600px;
+      width: 90%;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      color: #d6336c;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    form {
+      margin-top: 20px;
+      text-align: left;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    textarea {
+      width: 95%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+    input[type="submit"] {
+      background-color: #d6336c;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    input[type="submit"]:hover {
+      background-color: #c1275b;
+    }
+    .note {
+      font-size: 14px;
+      color: #888;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Koop een Mooie Roos</h1>
+    <!-- Zorg ervoor dat rose.jpg in dezelfde map staat als index.html -->
+    <img src="flower.jpeg" alt="Mooie Roos">
+    <p>Bestel een roos om je dag op te fleuren of om iemand speciaal te verrassen!</p>
+    <!-- Formspree formulier (vervang YOUR_FORMSPREE_URL_HERE met jouw Formspree URL) -->
+    <form action="YOUR_FORMSPREE_URL_HERE" method="POST">
+      <label for="sender">Afzender Naam:</label>
+      <input type="text" id="sender" name="sender" placeholder="Jouw naam" required>
+
+      <label for="recipient">Ontvanger Naam:</label>
+      <input type="text" id="recipient" name="recipient" placeholder="Naam van ontvanger" required>
+
+      <label for="recipientClass">Klas van ontvanger:</label>
+      <input type="text" id="recipientClass" name="recipientClass" placeholder="Klas van ontvanger" required>
+      
+      <label for="quantity">Aantal:</label>
+      <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+      
+      <label for="email">Jouw e-mailadres:</label>
+      <input type="email" id="email" name="email" placeholder="jouw@example.com" required>
+      
+      <label for="message">Wil je een bericht toevoegen?</label>
+      <textarea id="message" name="message" placeholder="Typ hier je bericht..."></textarea>
+      
+      <input type="submit" value="Bestellen">
+    </form>
+    <p class="note">Na het verzenden van je bestelling, sturen we je onze bankgegevens voor betaling.</p>
+  </div>
+</body>
+</html>
