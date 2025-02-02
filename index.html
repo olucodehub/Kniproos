@@ -32,6 +32,12 @@
       color: #555;
       margin-bottom: 20px;
     }
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+    }
     img {
       max-width: 100%;
       height: auto;
@@ -83,29 +89,36 @@
 </head>
 <body>
   <div class="container">
-    <h1>Koop een Mooie Roos</h1>
+    <h1>Koop een Mooie Roos!</h1>
     <!-- Zorg ervoor dat rose.jpg in dezelfde map staat als index.html -->
     <img src="flower.jpeg" alt="Mooie Roos">
-    <p>Bestel een roos om je dag op te fleuren of om iemand speciaal te verrassen!</p>
+    <p>Bestel een roos om iemand speciaal te verassen!</p>
+    <div class="price">Prijs: €XX.XX</div>
     <!-- Formspree formulier (vervang YOUR_FORMSPREE_URL_HERE met jouw Formspree URL) -->
     <form action="https://formsubmit.co/Kniproos2025@gmail.com" method="POST">
       <label for="sender">Afzender Naam:</label>
-      <input type="text" id="sender" name="sender" placeholder="Jouw naam" required>
+      <div style="display: flex; align-items: center;">
+        <input type="text" id="sender" name="sender" placeholder="Naam en achternaam van afzender" required style="flex: 1;">
+        <label for="anonymous" style="margin-left: 10px; white-space: nowrap;">
+          <input type="checkbox" id="anonymous" name="anonymous" onclick="toggleSender(this)">
+          (Het blijft anoniem!)
+        </label>
+      </div>
 
       <label for="recipient">Ontvanger Naam:</label>
-      <input type="text" id="recipient" name="recipient" placeholder="Naam van ontvanger" required>
+      <input type="text" id="recipient" name="recipient" placeholder="Naam en achternaam van ontvanger" required>
 
       <label for="recipientClass">Klas van ontvanger:</label>
       <input type="text" id="recipientClass" name="recipientClass" placeholder="Klas van ontvanger" required>
       
-      <label for="quantity">Aantal:</label>
+      <label for="quantity">Aantal rozen:</label>
       <input type="number" id="quantity" name="quantity" min="1" value="1" required>
       
       <label for="email">Jouw e-mailadres:</label>
       <input type="email" id="email" name="email" placeholder="jouw@example.com" required>
       
-      <label for="message">Wil je een bericht toevoegen?</label>
-      <textarea id="message" name="message" placeholder="Typ hier je bericht..."></textarea>
+      <label for="message">Wil je een bericht toevoegen? (Max. 100 tekens)</label>
+      <textarea id="message" name="message" placeholder="Typ hier je bericht..." maxlength="100"></textarea>
 
       <input type="hidden" name="_autoresponse" value="Bedankt voor je bestelling!
       We hebben je bestelling ontvangen en sturen binnenkort een Tikky naar je mailbox met alle betalingsgegevens. We waarderen je aankoop en hopen dat je geniet van je mooie roos!">
@@ -113,7 +126,22 @@
       <input type="submit" value="Bestellen">
       <input type="hidden" name="_captcha" value="false">
     </form>
-    <p class="note">Na het verzenden van je bestelling, sturen we je onze bankgegevens voor betaling.</p>
+    <p class="note">Uw ontvangt een tikkie voor de betaling na je bestelling, Pas na deze betaald is is de bestelling compleet.</p>
   </div>
+
+    <!-- JavaScript to disable/enable the sender field -->
+    <script>
+      function toggleSender(checkbox) {
+        const senderInput = document.getElementById('sender');
+        if (checkbox.checked) {
+          senderInput.removeAttribute('required');
+          senderInput.disabled = true;
+          senderInput.value = ''; // Clear the input if anonymous is selected
+        } else {
+          senderInput.disabled = false;
+          senderInput.setAttribute('required', 'required');
+        }
+      }
+    </script>
 </body>
 </html>
