@@ -93,14 +93,14 @@
     <!-- Zorg ervoor dat rose.jpg in dezelfde map staat als index.html -->
     <img src="flower.jpeg" alt="Mooie Roos">
     <p>Bestel een roos om iemand speciaal te verassen!</p>
-    <div class="price">Prijs: €XX.XX</div>
+    <div class="price">Prijs per roos: €XX.XX</div>
     <!-- Formspree formulier (vervang YOUR_FORMSPREE_URL_HERE met jouw Formspree URL) -->
     <form action="https://formsubmit.co/Kniproos2025@gmail.com" method="POST">
       <label for="sender">Afzender Naam:</label>
       <div style="display: flex; align-items: center;">
         <input type="text" id="sender" name="sender" placeholder="Naam en achternaam van afzender" required style="flex: 1;">
         <label for="anonymous" style="margin-left: 10px; white-space: nowrap;">
-          <input type="checkbox" id="anonymous" name="anonymous" onclick="toggleSender(this)">
+          <input type="checkbox" id="anonymous" name="anonymous">
           (Het blijft anoniem!)
         </label>
       </div>
@@ -128,20 +128,5 @@
     </form>
     <p class="note">Uw ontvangt een tikkie voor de betaling na je bestelling, Pas na deze betaald is is de bestelling compleet.</p>
   </div>
-
-    <!-- JavaScript to disable/enable the sender field -->
-    <script>
-      function toggleSender(checkbox) {
-        const senderInput = document.getElementById('sender');
-        if (checkbox.checked) {
-          senderInput.removeAttribute('required');
-          senderInput.disabled = true;
-          senderInput.value = ''; // Clear the input if anonymous is selected
-        } else {
-          senderInput.disabled = false;
-          senderInput.setAttribute('required', 'required');
-        }
-      }
-    </script>
 </body>
 </html>
