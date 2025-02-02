@@ -93,19 +93,13 @@
     <!-- Zorg ervoor dat rose.jpg in dezelfde map staat als index.html -->
     <img src="flower.jpeg" alt="Mooie Roos">
     <p>Bestel een roos om iemand speciaal te verassen!</p>
-    <div class="price">Prijs per roos: €XX.XX</div>
+    <div class="price">Prijs per roos: €2.75</div>
     <!-- Formspree formulier (vervang YOUR_FORMSPREE_URL_HERE met jouw Formspree URL) -->
     <form action="https://formsubmit.co/Kniproos2025@gmail.com" method="POST">
-      <label for="sender">Afzender Naam:</label>
-      <div style="display: flex; align-items: center;">
-        <input type="text" id="sender" name="sender" placeholder="Naam en achternaam van afzender" required style="flex: 1;">
-        <label for="anonymous" style="margin-left: 10px; white-space: nowrap;">
-          <input type="checkbox" id="anonymous" name="anonymous">
-          (Het blijft anoniem!)
-        </label>
-      </div>
+      <label for="sender">Afzender voor- en achternaam (Het blijft anoniem!):</label>
+      <input type="text" id="sender" name="sender" placeholder="Naam en achternaam van afzender" required>
 
-      <label for="recipient">Ontvanger Naam:</label>
+      <label for="recipient">Ontvanger voor- en achternaam:</label>
       <input type="text" id="recipient" name="recipient" placeholder="Naam en achternaam van ontvanger" required>
 
       <label for="recipientClass">Klas van ontvanger:</label>
